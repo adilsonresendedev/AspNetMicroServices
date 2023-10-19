@@ -1,0 +1,31 @@
+- Docker
+	* Check docker status
+	docker ps
+
+	* Get mongo image
+	docker pull mongo
+
+	* Start docker mongo image, fowarding the mongo port to local computer port, defining an instance name for the docker image
+	docker run -d -p 27017:27017 --name shopping-mongo mongo 
+
+  	* Connect to mongo db instance running on docker through the VS power shell
+	docker exec -it shopping-mongo /bin/bash
+
+	* Access mongodb via power shell
+	mongosh	
+
+	* Create or switch to database
+	use 'database Name'
+
+	* Createa collection - collections are similar to tables on relational databases
+	db.createCollection('collection name')
+
+	* Run docker compose file
+	docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+
+- Redis
+	* Open redis bash terminal
+	docker exec -it aspnetrun-redis /bin/bash
+
+	* Run redis commands
+	redis-cli
